@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tb_cadstro")
+@Table(name = "tb_cadastro")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,7 +18,7 @@ public class NinjaModel {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "mome")
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true)
