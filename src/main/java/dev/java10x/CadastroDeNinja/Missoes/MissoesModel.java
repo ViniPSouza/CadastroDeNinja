@@ -19,10 +19,11 @@ public class MissoesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
-
+    @Column(name = "nome")
     private String nome;
-
+    @Column(name = "dificuldade")
     private String dificuldade;
 
 
