@@ -9,9 +9,11 @@ public class NinjaService {
 
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     //Listar todos  os meu ninjas
@@ -20,14 +22,18 @@ public class NinjaService {
     }
 
     //Criar um novo ninja
-    public NinjaModel criarNinja(NinjaModel ninja){
-        return ninjaRepository.save(ninja);
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO){
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
+
     }
 
     //Deletar ninja - tem que ser um metodo VOID
     public void  deletarNinjaPorId(Long id){
          ninjaRepository.deleteById(id);
     }
+
     //atualizar ninja
     public NinjaModel atualizarNinaja(Long id, NinjaModel ninjaAtualizado){
         if (ninjaRepository.existsById(id)) {
