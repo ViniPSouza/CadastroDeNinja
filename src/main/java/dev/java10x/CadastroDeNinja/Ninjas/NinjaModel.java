@@ -27,6 +27,9 @@ public class NinjaModel {
     @Column(name = "ing_url")
     private String ingUrl;
 
+    @Column(name = "rank")
+    private String rank;
+
     @Column(name = "idade")
     private int idade;
 
