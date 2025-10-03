@@ -21,7 +21,7 @@ public class NinjaMapper {
         NinjaDTO ninjaDTO = new NinjaDTO();
         ninjaDTO.setId(ninjaModel.getId());
         ninjaDTO.setNome(ninjaModel.getNome());
-        ninjaDTO.setEmail(ninjaDTO.getEmail());
+        ninjaDTO.setEmail(ninjaModel.getEmail());
         ninjaDTO.setIngUrl(ninjaModel.getIngUrl());
         ninjaDTO.setIdade(ninjaModel.getIdade());
         ninjaDTO.setRank(ninjaModel.getRank());
